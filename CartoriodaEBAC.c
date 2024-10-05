@@ -114,49 +114,63 @@ int main()
 {
 	int opcao=0; //Definindo as variaveis
 	int x=1;
-
-	for(x=1;x=1;) //Laço de repetição começa aqui 
-	{
-		system("cls");
+	char senhadigi[]="a";
+	int comparacao;
 	
-		setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem
-		
-		printf("### Cartório da EBAC ###\n\n"); //Inicio do menu
-		printf("Escolha a opção desejada do menu:\n\n");
-		printf("\t1 - Registrar nomes\n");
-		printf("\t2 - Consultar nomes\n");
-		printf("\t3 - Deletar nomes\n"); 
-		printf("\t4 - Fechar programa\n\n");//Fim do menu
-		printf("Qual opção desejada? ");
-		scanf("%d", &opcao); //Aramazenando as informações do usuario
-		
-		system("cls"); //zerando a Tela
-		
-		switch(opcao)
+	printf("### Cartório da EBAC ###\n\n");
+	printf("Login de administrador!\n\nDigite a sua senha: ");
+	scanf("%s",senhadigi);
+	
+	comparacao=strcmp(senhadigi,"admin");
+	
+	if( comparacao== 0 )
+	{
+	
+	
+	
+		for(x=1;x=1;) //Laço de repetição começa aqui 
 		{
-			case 1:
-			registro();
-			break;
+			system("cls");
+		
+			setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem
 			
-			case 2:
-			consulta();
-			break;
+			printf("### Cartório da EBAC ###\n\n"); //Inicio do menu
+			printf("Escolha a opção desejada do menu:\n\n");
+			printf("\t1 - Registrar nomes\n");
+			printf("\t2 - Consultar nomes\n");
+			printf("\t3 - Deletar nomes\n"); 
+			printf("\t4 - Fechar programa\n\n");//Fim do menu
+			printf("Qual opção desejada? ");
+			scanf("%d", &opcao); //Aramazenando as informações do usuario
+			
+			system("cls"); //zerando a Tela
+			
+			switch(opcao)
+			{
+				case 1:
+				registro();
+				break;
 				
-			case 3:
-			deletar();
-			break;
+				case 2:
+				consulta();
+				break;
+					
+				case 3:
+				deletar();
+				break;
+				
+				case 4:
+				printf("sistema sendo finalizado!\n");
+				return 0;
+				break;
 			
-			case 4:
-			printf("sistema sendo finalizado!\n");
-			return 0;
-			break;
-		
-			default:
-			printf("Essa opção não existe,\n");
-			printf("Estaremos lhe redirecionando ao menu.\n\n");
-			system("pause");
-			break;
+				default:
+				printf("Essa opção não existe,\n");
+				printf("Estaremos lhe redirecionando ao menu.\n\n");
+				system("pause");
+				break;
+			}
 		}
-		
-	} //Laço termina aqui
-}
+	}				
+	 
+}//Laço termina aqui
